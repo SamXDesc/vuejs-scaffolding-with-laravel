@@ -52576,7 +52576,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./router */ "./resources/js/router/index.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -52586,23 +52586,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a; // Não sei se precisa.
 
-var routes = [{
-  path: '',
-  component: function component() {
-    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/Index.vue */ "./resources/js/components/Index.vue"));
-  }
-}, {
-  path: '/about',
-  component: function component() {
-    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./components/About.vue */ "./resources/js/components/About.vue"));
-  }
-}];
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  routes: routes
-});
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -52622,7 +52607,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('p-app', __webpack_require_
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: router
+  router: _router__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),
@@ -52672,6 +52657,90 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/router/index.js":
+/*!**************************************!*\
+  !*** ./resources/js/router/index.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes */ "./resources/js/router/routes.js");
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  routes: _routes__WEBPACK_IMPORTED_MODULE_2__["default"]
+}));
+
+/***/ }),
+
+/***/ "./resources/js/router/routes.js":
+/*!***************************************!*\
+  !*** ./resources/js/router/routes.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  path: '',
+  redirect: 'panel/dashboard'
+}, {
+  path: '/auth',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../layouts/Auth.vue */ "./resources/js/layouts/Auth.vue"));
+  },
+  redirect: 'auth/login',
+  children: [{
+    path: 'login',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../pages/auth/Login.vue */ "./resources/js/pages/auth/Login.vue"));
+    }
+  }, {
+    path: 'signup',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ../pages/auth/SignUp.vue */ "./resources/js/pages/auth/SignUp.vue"));
+    }
+  }]
+}, {
+  path: '/panel',
+  component: function component() {
+    return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../layouts/Panel.vue */ "./resources/js/layouts/Panel.vue"));
+  },
+  redirect: 'panel/dashboard',
+  children: [{
+    path: 'dashboard',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ../pages/panel/dashboard/Index.vue */ "./resources/js/pages/panel/dashboard/Index.vue"));
+    }
+  }, {
+    path: 'users',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ../pages/panel/users/Index.vue */ "./resources/js/pages/panel/users/Index.vue"));
+    },
+    children: [{
+      path: '',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../pages/panel/users/List.vue */ "./resources/js/pages/panel/users/List.vue"));
+      }
+    }, {
+      path: '{userId}',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../pages/panel/users/List.vue */ "./resources/js/pages/panel/users/List.vue"));
+      }
+    }]
+  }]
+}]);
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -52690,8 +52759,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/matrix/Documentos/Projects/Laravel/blog/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/matrix/Documentos/Projects/Laravel/blog/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/matrix/Documentos/Projects/Laravel/vuejs-scaffolding-with-laravel/vue-router/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/matrix/Documentos/Projects/Laravel/vuejs-scaffolding-with-laravel/vue-router/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

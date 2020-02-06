@@ -7,27 +7,9 @@
 require('./bootstrap');
 
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
+import router from './router'
 
 window.Vue = Vue // Não sei se precisa.
-
-const routes = [
-    {
-        path: '',
-        component: () => import('./components/Index.vue')
-    },
-
-    {
-        path: '/about',
-        component: () => import('./components/About.vue')
-    }
-]
-
-const router = new VueRouter({
-    routes
-})
 
 /**
  * The following block of code may be used to automatically register your
