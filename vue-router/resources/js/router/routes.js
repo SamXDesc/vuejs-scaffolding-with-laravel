@@ -1,7 +1,7 @@
 export default [
     {
         path: '',
-        redirect: 'panel/dashboard'
+        redirect: 'auth/login'
     },
 
     {

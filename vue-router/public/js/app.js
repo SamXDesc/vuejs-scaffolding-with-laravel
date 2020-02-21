@@ -52691,49 +52691,49 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
   path: '',
-  redirect: 'panel/dashboard'
+  redirect: 'auth/login'
 }, {
   path: '/auth',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../layouts/Auth.vue */ "./resources/js/layouts/Auth.vue"));
+    return __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ../layouts/Auth.vue */ "./resources/js/layouts/Auth.vue"));
   },
   redirect: 'auth/login',
   children: [{
     path: 'login',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 10).then(__webpack_require__.bind(null, /*! ../pages/auth/Login.vue */ "./resources/js/pages/auth/Login.vue"));
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../pages/auth/Login.vue */ "./resources/js/pages/auth/Login.vue"));
     }
   }, {
     path: 'signup',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 11).then(__webpack_require__.bind(null, /*! ../pages/auth/SignUp.vue */ "./resources/js/pages/auth/SignUp.vue"));
+      return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../pages/auth/SignUp.vue */ "./resources/js/pages/auth/SignUp.vue"));
     }
   }]
 }, {
   path: '/panel',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 9).then(__webpack_require__.bind(null, /*! ../layouts/Panel.vue */ "./resources/js/layouts/Panel.vue"));
+    return __webpack_require__.e(/*! import() */ 2).then(__webpack_require__.bind(null, /*! ../layouts/Panel.vue */ "./resources/js/layouts/Panel.vue"));
   },
   redirect: 'panel/dashboard',
   children: [{
     path: 'dashboard',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ../pages/panel/dashboard/Index.vue */ "./resources/js/pages/panel/dashboard/Index.vue"));
+      return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../pages/panel/dashboard/Index.vue */ "./resources/js/pages/panel/dashboard/Index.vue"));
     }
   }, {
     path: 'users',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ../pages/panel/users/Index.vue */ "./resources/js/pages/panel/users/Index.vue"));
+      return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../pages/panel/users/Index.vue */ "./resources/js/pages/panel/users/Index.vue"));
     },
     children: [{
       path: '',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../pages/panel/users/List.vue */ "./resources/js/pages/panel/users/List.vue"));
+        return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/panel/users/List.vue */ "./resources/js/pages/panel/users/List.vue"));
       }
     }, {
       path: '{userId}',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../pages/panel/users/List.vue */ "./resources/js/pages/panel/users/List.vue"));
+        return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../pages/panel/users/List.vue */ "./resources/js/pages/panel/users/List.vue"));
       }
     }]
   }]

@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('index');
-})->where('any', '.*');
+// Landing Page
+Route::view('/', 'home');
+
+// SPA
+Route::view('/admin', 'index');
